@@ -1,9 +1,13 @@
 {
   "slug": "flow-map-ink",
   "title": "Ink Storm",
-  "tagline": "Stir a river of glowing ink and see which method keeps its detail.",
+  "tagline": "A living ink painting. Stir it forever and the detail never smears.",
   "kind": "demo",
-  "tags": ["graphics", "simulation", "fluid-dynamics"],
+  "tags": [
+    "graphics",
+    "simulation",
+    "fluid-dynamics"
+  ],
   "date": "2026-10-10",
   "builtBy": "Virtual Lab",
   "entry": "demo/index.html",
@@ -18,8 +22,8 @@
       "Victor Michel-Dansac"
     ]
   },
-  "novelty": "No known implementation (not verified): a live interactive comparison pairs ordinary dye advection with classical characteristic-map pullback in a shared procedural flow.",
-  "description": "A browser fluid artwork that compares how repeated grid sampling smears dye while carrying a flow map preserves fine initial pattern detail.",
-  "howItWorks": "A WebGL2 shader advects both the dye and a backward characteristic map through the same analytic swirling velocity field. The left half repeatedly samples dye; the right half samples the original pattern through the composed map. The paper uses neural networks to learn flow maps; this demo uses a simplified classical map technique and no learned model.",
-  "controls": "Drag the artwork to stir and drag the center handle to move the comparison. Double-tap or double-click to add a vortex impulse. Use Reset, Pattern to cycle three initial images, and Split view to switch to a full-frame view."
+  "novelty": "No known implementation (not verified): a full-screen pressure-projected fluid toy whose marbled artwork is pulled back through a GPU-advected flow map, so filaments stay sharp indefinitely.",
+  "description": "A full-screen GPU fluid painting: drag to stir procedural marbled art, pour glowing ink, switch palettes and patterns, and save your swirl. The artwork is evaluated through a backward flow map, so fine filaments survive stirring that would blur an ordinary dye field.",
+  "howItWorks": "A WebGL2 stable-fluids solver (advection, vorticity confinement, pressure projection) runs at about 200 cells high. A 32-bit backward flow map at up to 1100 pixels high is advected through the same velocity field, and every pixel looks up the procedural marble pattern at its pulled-back position, so detail is never resampled away. Poured ink is a separate classically advected layer. The paper learns flow maps with Lagrangian PINNs; this demo uses the classical characteristic-map idea only and runs no neural network.",
+  "controls": "Drag to stir. Double-tap or double-click for a vortex burst. Pour toggles glowing ink under your finger. Pick a palette, cycle Pattern, Reset, or Save a PNG. Leave it alone and it stirs itself."
 }
