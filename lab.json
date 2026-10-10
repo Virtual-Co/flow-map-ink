@@ -1,0 +1,25 @@
+{
+  "slug": "flow-map-ink",
+  "title": "Ink Storm",
+  "tagline": "Stir a river of glowing ink and see which method keeps its detail.",
+  "kind": "demo",
+  "tags": ["graphics", "simulation", "fluid-dynamics"],
+  "date": "2026-10-10",
+  "builtBy": "Virtual Lab",
+  "entry": "demo/index.html",
+  "paper": {
+    "title": "A neural characteristic mapping method: Lagrangian PINNs based on flow maps for transport-dominated problems",
+    "arxiv": "2610.12395",
+    "authors": [
+      "Martin Campos Pinto",
+      "Victor Fournet",
+      "Emmanuel Franck",
+      "Philipp Krah",
+      "Victor Michel-Dansac"
+    ]
+  },
+  "novelty": "No known implementation (not verified): a live interactive comparison pairs ordinary dye advection with classical characteristic-map pullback in a shared procedural flow.",
+  "description": "A browser fluid artwork that compares how repeated grid sampling smears dye while carrying a flow map preserves fine initial pattern detail.",
+  "howItWorks": "A WebGL2 shader advects both the dye and a backward characteristic map through the same analytic swirling velocity field. The left half repeatedly samples dye; the right half samples the original pattern through the composed map. The paper uses neural networks to learn flow maps; this demo uses a simplified classical map technique and no learned model.",
+  "controls": "Drag the artwork to stir and drag the center handle to move the comparison. Double-tap or double-click to add a vortex impulse. Use Reset, Pattern to cycle three initial images, and Split view to switch to a full-frame view."
+}
